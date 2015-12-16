@@ -13,6 +13,7 @@ dump
 bin
 
 # SBT
+/project/.sbtserver
 dist
 project/boot
 project/target
