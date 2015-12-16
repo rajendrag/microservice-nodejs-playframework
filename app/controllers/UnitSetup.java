@@ -32,4 +32,9 @@ public class UnitSetup extends Controller {
         Set<UnitEntity> units = UnitEntity.findAll(UnitEntity.class);
         return ok(Json.toJson(units));
     }
+
+    @Transactional
+    public Result load(String unitId) {
+        return ok(Json.toJson(UnitEntity.find(UnitEntity.class, unitId)));
+    }
 }
