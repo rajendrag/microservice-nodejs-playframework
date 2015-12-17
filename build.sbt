@@ -19,6 +19,6 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
 routesGenerator := InjectedRoutesGenerator
 
-fork in run := true
+fork in run := false
 
 PlayKeys.externalizeResources := false
