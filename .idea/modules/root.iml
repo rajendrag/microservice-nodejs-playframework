@@ -1006,24 +1006,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="SBT: org.webjars:bootstrap:3.3.5:jar">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.webjars/bootstrap/jars/bootstrap-3.3.5.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="SBT: org.webjars:jquery:2.1.4:jar">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/.ivy2/cache/org.webjars/jquery/jars/jquery-2.1.4.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="SBT: org.yaml:snakeyaml:1.15:jar">
         <CLASSES>
           <root url="jar://$USER_HOME$/.ivy2/cache/org.yaml/snakeyaml/bundles/snakeyaml-1.15.jar!/" />
