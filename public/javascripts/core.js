@@ -1,4 +1,4 @@
-var ivarsaApp = angular.module('ivarsa', ['ngRoute', 'unitControllers', 'unitService']);
+var ivarsaApp = angular.module('ivarsa', ['ngRoute', 'unitControllers', 'unitService', 'angular.filter']);
 ivarsaApp.config(['$routeProvider',
                    function($routeProvider) {
                      $routeProvider.

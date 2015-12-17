@@ -1,6 +1,7 @@
 
 package models.bo;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import org.hibernate.envers.RevisionNumber;
 import org.hibernate.envers.RevisionTimestamp;
 import play.db.jpa.JPA;
@@ -19,6 +20,7 @@ import java.util.Set;
  * @version $Revision: 1.0 $, $Date: Apr 27, 2015
  */
 
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY, getterVisibility = JsonAutoDetect.Visibility.NONE, isGetterVisibility = JsonAutoDetect.Visibility.NONE, setterVisibility = JsonAutoDetect.Visibility.NONE)
 @MappedSuperclass
 public abstract class BaseDo implements Serializable {
    
