@@ -1,12 +1,11 @@
 iVarsa-play
 ===================
 
-A very simple PlayFramework application, to demonstrate how **Play, Angular JS, MySQL, JPA with Hibernate** work together.
+A very simple PlayFramework application, to demonstrate how Play can be a backend server in a micro services architecture. There will be a front **Node** server (Please refer to https://github.com/rajendrag/ivarsa for the front server implementation).
 
 Stack
 -----------
 - Play Framework
-- Angular JS
 - MySQL
 - Hibernate
 
