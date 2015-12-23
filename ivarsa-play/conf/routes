@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Default path will just redirect to the unit list
+GET     /                                       controllers.UnitSetup.index()
+
+# Units list
+GET     /units                                  controllers.UnitSetup.list()
+GET     /units/:unitId                          controllers.UnitSetup.load(unitId: String)
+
+# Static resources
+GET     /javascripts/*file                      controllers.Assets.at(path="/public/javascripts", file)
+GET     /libraries/*file                        controllers.Assets.at(path="/public/libraries", file)
+GET     /javascripts/controllers/*file          controllers.Assets.at(path="/public/javascripts/controllers", file)
+GET     /javascripts/services/*file             controllers.Assets.at(path="/public/javascripts/services", file)
+GET     /stylesheets/*file                      controllers.Assets.at(path="/public/stylesheets", file)
+GET     /angviews/*file                         controllers.Assets.at(path="/public/angviews", file)
