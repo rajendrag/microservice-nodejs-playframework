@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="tabbable">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#unitTabsPanel_main" data-toggle="tab" showtab="">Basic Info</a></li>
+            <li><a href="#unitTabsPanelOpHours" data-toggle="tab" showtab="">Operating Hours</a></li>
+            <li><a href="#unitTabsPanelNurseSch" data-toggle="tab" showtab="">Nurse Schedule</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="unitTabsPanel_main" ng-include="'angviews/unit-basic-info.html'">
+
+            </div>
+            <div class="tab-pane" id="unitTabsPanelOpHours" ng-include="'angviews/unit-op-hours.html'">
+
+            </div>
+            <div class="tab-pane" id="unitTabsPanelNurseSch" ng-include="'angviews/unit-nurse-sch.html'">
+
+            </div>
+        </div>
+    </div>
+</div>
