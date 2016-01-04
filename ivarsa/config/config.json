@@ -1,4 +1,4 @@
-{
+/*{
   "development": {
     "username": "iqueue_u",
     "password": "iqueue_p@$sw0rD",
@@ -21,3 +21,4 @@
     "dialect": "mysql"
   }
 }
+*/
