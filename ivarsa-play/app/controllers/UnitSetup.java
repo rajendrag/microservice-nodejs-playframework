@@ -13,16 +13,10 @@ import java.util.Set;
  * Created by RP on 12/15/15.
  */
 public class UnitSetup extends Controller {
-    /**
-     * This result directly redirect to application home.
-     */
-    public Result GO_HOME = ok(
-            views.html.main.render()
 
-    );
 
     public Result index() {
-        return GO_HOME;
+        return list();
     }
 
     /**

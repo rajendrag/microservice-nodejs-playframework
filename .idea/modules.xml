@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ivarsa/ivarsa.iml" filepath="$PROJECT_DIR$/ivarsa/ivarsa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/microservices-example.iml" filepath="$PROJECT_DIR$/.idea/microservices-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ivarsa-play/.idea/modules/root.iml" filepath="$PROJECT_DIR$/ivarsa-play/.idea/modules/root.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ivarsa-play/.idea/modules/root-build.iml" filepath="$PROJECT_DIR$/ivarsa-play/.idea/modules/root-build.iml" />
+    </modules>
+  </component>
+</project>
