@@ -32,10 +32,10 @@ RUNNING_PID
 .LSOverride
 
 # Idea
-# .idea/workspace.xml
-# .idea/tasks.xml
-# .idea/dictionaries
-# .idea/shelf
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/shelf
 
 # Sensitive or high-churn files:
 # .idea/dataSources.ids
