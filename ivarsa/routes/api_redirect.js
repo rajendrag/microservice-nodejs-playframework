@@ -12,7 +12,7 @@ router.get('/*', function(req, res, next) {
     var requrl = "localhost";
     proxy("localhost:9000", {
                       forwardPath: function(req, res) {
-                        return require('url').parse(req.url).path;
+                        return require('url').parse(req.originalUrl).path;
                       }
                     })(req, res, next);
 
