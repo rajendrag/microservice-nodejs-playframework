@@ -5,9 +5,12 @@
 
     <persistence-unit name="defaultPersistenceUnit" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <non-jta-data-source>DefaultDS</non-jta-data-source>
+        <non-jta-data-source>/DefaultDS</non-jta-data-source>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.multiTenancy" value="SCHEMA"/>
+            <property name="hibernate.multi_tenant_connection_provider" value="util.multitenancy.MultiTenantConnectionProviderImpl"/>
+            <property name="hibernate.tenant_identifier_resolver" value="util.multitenancy.TenantIdResolver" />
         </properties>
     </persistence-unit>
 

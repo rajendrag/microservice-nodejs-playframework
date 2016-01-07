@@ -18,7 +18,7 @@ Setup
 ```
 git clone https://github.com/rajendrag/ivarsa-play.git
 cd ivarsa-play
-activator "run"
+activator "run" (or to debug activator -jvm-debug 9999 run)
 ```
 This will start the application on port 9000 in auto reload mode, so that you can see your changes instantly, but as the UI is serving from Node server, when you start Node server it will run on 3000. So access http://localhost:3000 to open the applicaiton.
 

@@ -12,7 +12,8 @@ libraryDependencies ++= Seq(
   javaJpa,
   "mysql" % "mysql-connector-java" % "5.1.21",
   "org.hibernate" % "hibernate-entitymanager" % "5.0.5.Final",
-  "org.hibernate" % "hibernate-envers" % "5.0.5.Final"
+  "org.hibernate" % "hibernate-envers" % "5.0.5.Final",
+  "c3p0" % "c3p0" % "0.9.1.2"
 )     
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava)
