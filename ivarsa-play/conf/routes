@@ -6,7 +6,7 @@
 GET     /                                       controllers.UnitSetup.index()
 
 # Units list
-GET     /units                                  controllers.UnitSetup.list()
+GET     /units                                  @controllers.UnitSetup.list()
 GET     /units/:unitId                          controllers.UnitSetup.load(unitId: String)
 
 # Static resources

@@ -25,7 +25,7 @@ This will start the application on port 9000 in auto reload mode, so that you ca
 Load Testing
 -------------
 ```
-siege -c100 -t1M http://localhost:9000/units
+siege -c100 -t1M http://localhost:9000/api/units
 ```
 This will create 100 concurrent requests and keep hitting the server for 1 minute and gives us the statistics
 

@@ -30,14 +30,13 @@ public class MultiTenantConnectionProviderImpl implements MultiTenantConnectionP
     /**
      *
      * Constructor. Initializes the ComboPooledDataSource based on the config.properties.
-     *
-     * @throws PropertyVetoException
      */
     public MultiTenantConnectionProviderImpl() {
         Configuration configuration = Play.application().configuration();
         ComboPooledDataSource cpds = getComboPooledDataSource(configuration);
-        cpds.setJdbcUrl(configuration.getString("jdbc.url"));
-        dataSourceMap.put("default", cpds);
+        String prefix = configuration.getString("jdbc.urlprefix")+configuration.getString("jdbc.host")+"/";
+        cpds.setJdbcUrl(prefix+configuration.getString("jdbc.commondb"));
+        dataSourceMap.put("common", cpds);
         log.info("Connection Pool initialised!");
     }
 
@@ -56,7 +55,7 @@ public class MultiTenantConnectionProviderImpl implements MultiTenantConnectionP
 
     @Override
     public Connection getAnyConnection() throws SQLException {
-        ComboPooledDataSource cpds = dataSourceMap.get("default");
+        ComboPooledDataSource cpds = dataSourceMap.get("common");
         log.debug("Get Default Connection:::Number of connections (max: busy - idle): {} : {} - {}",new int[]{cpds.getMaxPoolSize(),cpds.getNumBusyConnectionsAllUsers(),cpds.getNumIdleConnectionsAllUsers()});
         if (cpds.getNumConnectionsAllUsers() == cpds.getMaxPoolSize()){
             log.warn("Maximum number of connections opened");
@@ -73,10 +72,10 @@ public class MultiTenantConnectionProviderImpl implements MultiTenantConnectionP
         if(cpds == null) {
             Configuration conf = Play.application().configuration();
             cpds = getComboPooledDataSource(conf);
-            String url = conf.getString("jdbc.url");
-            String jdbcUrl = url.substring(0, url.lastIndexOf("/")+1) + conf.getString("jdbc.commondb")+"_"+tenantIdentifier;
+            String prefix = conf.getString("jdbc.urlprefix")+conf.getString("jdbc.host")+"/";
+            String jdbcUrl = prefix + conf.getString("jdbc.applicationdbprefix")+tenantIdentifier;
             cpds.setJdbcUrl(jdbcUrl);
-            dataSourceMap.put("default", cpds);
+            dataSourceMap.put(tenantIdentifier, cpds);
         }
         log.debug("Get {} Connection:::Number of connections (max: busy - idle): {} : {} - {}",new Object[]{tenantIdentifier, cpds.getMaxPoolSize(),cpds.getNumBusyConnectionsAllUsers(),cpds.getNumIdleConnectionsAllUsers()});
         if (cpds.getNumConnectionsAllUsers() == cpds.getMaxPoolSize()){

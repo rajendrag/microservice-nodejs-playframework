@@ -61,13 +61,13 @@ public class UnitEntity extends PrimaryBaseDo  {
     @Column(name="owner")
     private String owner;
     
-    @OneToMany(mappedBy="iqUnitMstr", cascade= CascadeType.ALL, fetch= FetchType.LAZY, orphanRemoval=true, targetEntity=UnitHrsOfOperationEntity.class)
+    @OneToMany(mappedBy="iqUnitMstr", cascade= CascadeType.ALL, fetch= FetchType.EAGER, orphanRemoval=true, targetEntity=UnitHrsOfOperationEntity.class)
     private Set<UnitHrsOfOperationEntity> hrsOfOperation = Sets.newHashSet();
     
-    @OneToMany(mappedBy="iqUnitMstr", cascade= CascadeType.ALL, fetch= FetchType.LAZY, orphanRemoval=true, targetEntity=HolidaysPerUnitEntity.class)
+    @OneToMany(mappedBy="iqUnitMstr", cascade= CascadeType.ALL, fetch= FetchType.EAGER, orphanRemoval=true, targetEntity=HolidaysPerUnitEntity.class)
     private Set<HolidaysPerUnitEntity> holidays = Sets.newHashSet();
     
-    @OneToMany(mappedBy="iqUnitMstr", cascade= CascadeType.ALL, fetch= FetchType.LAZY, orphanRemoval=true, targetEntity=NurseCoverageEntity.class)
+    @OneToMany(mappedBy="iqUnitMstr", cascade= CascadeType.ALL, fetch= FetchType.EAGER, orphanRemoval=true, targetEntity=NurseCoverageEntity.class)
     private Set<NurseCoverageEntity> nurseCoverage = Sets.newHashSet();
 
     public UnitEntity(){ 

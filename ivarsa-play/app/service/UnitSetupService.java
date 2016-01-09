@@ -1,5 +1,6 @@
 package service;
 
+import common.AsyncJPA;
 import models.bo.UnitEntity;
 import play.db.jpa.JPA;
 import play.libs.F.Promise;
@@ -15,7 +16,7 @@ import static play.libs.F.Promise.promise;
 @Singleton
 public class UnitSetupService {
 
-    public Promise<Set<UnitEntity>> findAll() {
+    /*public Promise<Set<UnitEntity>> findAll() {
         try {
             return promise(() -> JPA.withTransaction(()-> {
                 return UnitEntity.findAll(UnitEntity.class);
@@ -24,5 +25,9 @@ public class UnitSetupService {
             throwable.printStackTrace();
         }
         return null;
+    }*/
+
+    public Promise<Set<UnitEntity>> findAll() {
+        return AsyncJPA.doInAsync(() -> UnitEntity.findAll(UnitEntity.class));
     }
 }
